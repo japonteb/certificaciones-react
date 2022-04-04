@@ -1,7 +1,6 @@
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import { Link } from 'app/shared/components/Link';
-import { NavItemDiv } from './styles';
+import { NavItemDiv, NavItemLink } from './styles';
 
 interface NavItemProps {
   label: string;
@@ -10,9 +9,9 @@ interface NavItemProps {
 
 export const NavItem: React.FC<NavItemProps> = ({ label, to }) => (
   <NavItemDiv>
-    <Link to={to} replace={true}>
+    <NavItemLink to={to} replace={true}>
       {label}
-    </Link>
+    </NavItemLink>
   </NavItemDiv>
 );
 

@@ -1,5 +1,9 @@
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
+import {
+  ContainerTitle,
+  SectionContainer,
+} from 'app/shared/components/Layout/styles';
 
 interface InicioProps {
   msg: string;
@@ -7,10 +11,10 @@ interface InicioProps {
 
 export const Inicio: React.FC<InicioProps> = ({ msg }) => {
   return (
-    <div>
-      <h1>{msg}</h1>
+    <SectionContainer>
+      <ContainerTitle>{msg}</ContainerTitle>
       <img src="https://picsum.photos/id/8/400/200" alt="" />
-    </div>
+    </SectionContainer>
   );
 };
 

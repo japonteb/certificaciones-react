@@ -1,6 +1,7 @@
 import { Cliente } from 'app/feature/Producto/models/Cliente';
 
 export const LISTAR_CLIENTES = 'LISTAR_CLIENTES';
+export const OBTENER_DETALLE_CLIENTE = 'OBTENER_DETALLE_CLIENTE';
 
 interface AccionListarClientes {
   type: typeof LISTAR_CLIENTES;
@@ -8,4 +9,11 @@ interface AccionListarClientes {
   cantidadTotalCliente: number;
 }
 
-export type TiposAccionesCliente = AccionListarClientes;
+interface AccionObtenerDetalleCliente {
+  type: typeof OBTENER_DETALLE_CLIENTE;
+  payload: Cliente;
+}
+
+export type TiposAccionesCliente =
+  | AccionListarClientes
+  | AccionObtenerDetalleCliente;

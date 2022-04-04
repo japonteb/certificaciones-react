@@ -1,9 +1,9 @@
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import { DivContainer, DivRow } from './styles';
-import { FormCrearProducto } from '../../components/FormCrearProducto';
-import { ListaProductos } from '../../components/ListarProductos';
-import { PaginadorProductos } from '../../components/PaginadorProductos';
+import { DivContainer, DivRow } from '../styles';
+import { FormCrearProducto } from '../../components/producto/FormCrearProducto';
+import { ListaProductos } from '../../components/producto/ListarProductos';
+import { PaginadorProductos } from '../../components/producto/PaginadorProductos';
 import { Producto } from '../../models/Producto';
 import { useEffect } from 'react';
 

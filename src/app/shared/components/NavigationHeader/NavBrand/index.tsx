@@ -1,7 +1,6 @@
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import { BrandDiv, LogoImg, LogoSpan } from './styles';
-import { Link } from 'app/shared/components/Link';
+import { BrandDiv, BrandLink, LogoImg, LogoSpan } from './styles';
 
 interface NavBrandProps {
   imgSrc?: string;
@@ -10,13 +9,13 @@ interface NavBrandProps {
 
 export const NavBrand: React.FC<NavBrandProps> = ({ imgSrc, text }) => (
   <BrandDiv>
-    <Link to="/" replace={true}>
+    <BrandLink to="/" replace={true}>
       {imgSrc ? (
         <LogoImg src={imgSrc} alt={text}></LogoImg>
       ) : (
         <LogoSpan>{text}</LogoSpan>
       )}
-    </Link>
+    </BrandLink>
   </BrandDiv>
 );
 

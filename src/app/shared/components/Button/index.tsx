@@ -1,14 +1,12 @@
 import styled from 'styled-components';
 
 export const Button = styled.button`
-  background: #2d6133;
-  border-radius: 3px;
+  background: #222;
   color: #fff;
-  height: 32px;
-  display: block;
-  width: 100%;
-  text-align: center;
-  &[disabled] {
-    opacity: 0.3;
+  padding: 0.5em 1em;
+  text-decoration: none;
+  transition: 0.5s;
+  &:hover {
+    color: #ffbb33;
   }
 `;

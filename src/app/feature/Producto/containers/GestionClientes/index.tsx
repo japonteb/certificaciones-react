@@ -1,9 +1,9 @@
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import { DivContainer, DivRow } from './styles';
+import { DivContainer, DivRow } from '../styles';
 import { Cliente } from '../../models/Cliente';
-import { ListaClientes } from '../../components/ListarClientes';
-import { PaginadorClientes } from '../../components/PaginadorClientes';
+import { ListaClientes } from '../../components/cliente/ListarClientes';
+import { PaginadorClientes } from '../../components/cliente/PaginadorClientes';
 import { useEffect } from 'react';
 
 interface GestionClientesProps {

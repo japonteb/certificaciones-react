@@ -1,0 +1,41 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FormCrearExamen test should match snapshot 1`] = `
+<div>
+  <form>
+    <h2>
+      Form test
+    </h2>
+    <input
+      class="sc-AxirZ eAukyj"
+      name="nombre"
+      placeholder="Nombre de la certificación"
+      value=""
+    />
+    <input
+      class="sc-AxirZ eAukyj"
+      name="detalle"
+      placeholder="Detalle de la certificación"
+      value=""
+    />
+    <input
+      class="sc-AxirZ eAukyj"
+      name="duracion"
+      placeholder="Duración en horas"
+      value=""
+    />
+    <input
+      class="sc-AxirZ eAukyj"
+      name="precio"
+      placeholder="Precio en COP"
+      value=""
+    />
+    <button
+      class="sc-AxjAm kgxTKy"
+      type="submit"
+    >
+      Registrar
+    </button>
+  </form>
+</div>
+`;

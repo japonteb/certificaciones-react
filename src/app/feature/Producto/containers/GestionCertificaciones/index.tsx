@@ -1,10 +1,10 @@
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
-import { DivContainer, DivRow } from './styles';
+import { DivContainer, DivRow } from '../styles';
 import { Certificacion } from '../../models/Certificacion';
-import { FormCrearCertificacion } from '../../components/FormCrearCertificacion';
-import { ListaCertificaciones } from '../../components/ListarCertificaciones';
-import { PaginadorCertificaciones } from '../../components/PaginadorCertificaciones';
+import { FormCrearCertificacion } from '../../components/certificacion/FormCrearCertificacion';
+import { ListaCertificaciones } from '../../components/certificacion/ListarCertificaciones';
+import { PaginadorCertificaciones } from '../../components/certificacion/PaginadorCertificaciones';
 import { useEffect } from 'react';
 
 interface GestionCertificacionesProps {

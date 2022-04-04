@@ -11,12 +11,13 @@ export const LogoImg = styled.img`
 `;
 
 export const LogoSpan = styled.span`
-  color: green;
+  color: #ffbb33;
   font-size: calc(18px + 2vmin);
 `;
 
 export const BrandLink = styled(Link)`
   text-decoration: none;
+  color: #fff;
 `;
 
 export default {};

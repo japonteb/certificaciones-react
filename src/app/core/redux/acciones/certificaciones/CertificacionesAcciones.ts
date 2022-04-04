@@ -21,9 +21,6 @@ export function listarCertificaciones(
 export function agregarNuevaCertificacion(
   certificacion: Certificacion
 ): TiposAccionesCertificacion {
-  console.log('********************************');
-  console.log('LLEGO POR ACÁ');
-  console.log('********************************');
   return {
     type: AGREGAR_CERTIFICACION,
     payload: certificacion,
