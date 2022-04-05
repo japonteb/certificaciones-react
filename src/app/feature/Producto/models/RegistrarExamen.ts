@@ -2,7 +2,7 @@ import { Certificacion } from './Certificacion';
 import { Cliente } from './Cliente';
 
 export interface RegistrarExamen {
-  cliente: Cliente;
-  certificacion: Certificacion;
+  comandoCliente: Cliente;
+  comandoCertificacion: Certificacion;
   fechaPresentacion: string;
 }
