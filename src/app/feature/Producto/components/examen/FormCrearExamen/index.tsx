@@ -78,6 +78,8 @@ export const FormCrearExamen: React.FC<FormCrearExamenProp> = ({
     onSubmit: handleSubmit,
   });
 
+  console.log(formik.values);
+
   return (
     <Form onSubmit={formik.handleSubmit}>
       <h2>{formTitle}</h2>
@@ -88,8 +90,10 @@ export const FormCrearExamen: React.FC<FormCrearExamenProp> = ({
       <FormInputDiv>
         <Label htmlFor="cliente">Cliente:</Label>
         <Select
-          name="cliente"
+          id="cliente"
           disabled={disabled}
+          name="cliente"
+          value={formik.values.cliente.id}
           onChange={formik.handleChange}
         >
           <option>Seleccione un cliente</option>
@@ -109,8 +113,10 @@ export const FormCrearExamen: React.FC<FormCrearExamenProp> = ({
       <FormInputDiv>
         <Label htmlFor="certificación">Certificación:</Label>
         <Select
-          name="certificacion"
+          id="certificacion"
           disabled={disabled}
+          name="certificacion"
+          value={formik.values.certificacion.id}
           onChange={formik.handleChange}
         >
           <option>Seleccione una certificación</option>

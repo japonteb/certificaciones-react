@@ -73,10 +73,9 @@ export const FormCrearCertificacion: React.FC<FormCrearCertificacionProp> = ({
         <Label htmlFor="nombre">Nombre de la certificación:</Label>
         <Input
           disabled={disabled}
-          name="nombre"
+          id="nombre"
           placeholder="Ingresa el nombre"
-          value={formik.values.nombre}
-          onChange={formik.handleChange}
+          {...formik.getFieldProps('nombre')}
         />
         {formik.touched.nombre && formik.errors.nombre && (
           <SpanError>{formik.errors.nombre}</SpanError>
@@ -87,10 +86,9 @@ export const FormCrearCertificacion: React.FC<FormCrearCertificacionProp> = ({
         <Label htmlFor="detalle">Detalle de la certificación:</Label>
         <Input
           disabled={disabled}
-          name="detalle"
+          id="detalle"
           placeholder="Ingresa el detalle"
-          value={formik.values.detalle}
-          onChange={formik.handleChange}
+          {...formik.getFieldProps('detalle')}
         />
         {formik.touched.detalle && formik.errors.detalle && (
           <SpanError>{formik.errors.detalle}</SpanError>
@@ -100,10 +98,9 @@ export const FormCrearCertificacion: React.FC<FormCrearCertificacionProp> = ({
         <Label htmlFor="duracion">Duración de la certificación:</Label>
         <Input
           disabled={disabled}
-          name="duracion"
+          id="duracion"
           placeholder="Ingresa la duración en horas"
-          value={formik.values.duracion}
-          onChange={formik.handleChange}
+          {...formik.getFieldProps('duracion')}
         />
         {formik.touched.duracion && formik.errors.duracion && (
           <SpanError>{formik.errors.duracion}</SpanError>
@@ -113,10 +110,9 @@ export const FormCrearCertificacion: React.FC<FormCrearCertificacionProp> = ({
         <Label htmlFor="precio">Precio de la certificación:</Label>
         <Input
           disabled={disabled}
-          name="precio"
+          id="precio"
           placeholder="Ingresa el precio en COP"
-          value={formik.values.precio}
-          onChange={formik.handleChange}
+          {...formik.getFieldProps('precio')}
         />
         {formik.touched.precio && formik.errors.precio && (
           <SpanError>{formik.errors.precio}</SpanError>
