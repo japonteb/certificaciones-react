@@ -150,11 +150,6 @@ export const FormCrearExamen: React.FC<FormCrearExamenProp> = ({
           showTimeSelect
           onChange={(date: Date) => setFechaPresentacion(date)}
         />
-
-        {formik.touched.fechaPresentacion &&
-          formik.errors.fechaPresentacion && (
-            <SpanError>{formik.errors.fechaPresentacion}</SpanError>
-          )}
       </FormInputDiv>
       <Button type="submit">Registrar</Button>
     </Form>

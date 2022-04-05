@@ -1,5 +1,91 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`FormCrearCertificacion test should match snapshot 1`] = `
+<div>
+  <form
+    class="sc-AxirZ hDUOfy"
+  >
+    <h2>
+      Form test
+    </h2>
+    <div
+      class="sc-AxiKw eFNUgS"
+    >
+      <label
+        class="sc-AxgMl bMdvsc"
+        for="nombre"
+      >
+        Nombre de la certificación:
+      </label>
+      <input
+        class="sc-AxhUy fHwnCS"
+        id="nombre"
+        name="nombre"
+        placeholder="Ingresa el nombre"
+        value=""
+      />
+    </div>
+    <div
+      class="sc-AxiKw eFNUgS"
+    >
+      <label
+        class="sc-AxgMl bMdvsc"
+        for="detalle"
+      >
+        Detalle de la certificación:
+      </label>
+      <input
+        class="sc-AxhUy fHwnCS"
+        id="detalle"
+        name="detalle"
+        placeholder="Ingresa el detalle"
+        value=""
+      />
+    </div>
+    <div
+      class="sc-AxiKw eFNUgS"
+    >
+      <label
+        class="sc-AxgMl bMdvsc"
+        for="duracion"
+      >
+        Duración de la certificación:
+      </label>
+      <input
+        class="sc-AxhUy fHwnCS"
+        id="duracion"
+        name="duracion"
+        placeholder="Ingresa la duración en horas"
+        value="0"
+      />
+    </div>
+    <div
+      class="sc-AxiKw eFNUgS"
+    >
+      <label
+        class="sc-AxgMl bMdvsc"
+        for="precio"
+      >
+        Precio de la certificación:
+      </label>
+      <input
+        class="sc-AxhUy fHwnCS"
+        id="precio"
+        name="precio"
+        placeholder="Ingresa el precio en COP"
+        value="0"
+      />
+    </div>
+    <button
+      class="sc-AxhCb fTPisR"
+      type="submit"
+    >
+      Registrar
+    </button>
+  </form>
+</div>
+`;
+
 exports[`FormCrearExamen test should match snapshot 1`] = `
 <div>
   <form>

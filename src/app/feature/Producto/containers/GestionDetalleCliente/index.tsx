@@ -2,12 +2,12 @@ import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import { DivContainer, DivRow } from '../styles';
 import { Cliente } from '../../models/Cliente';
+import { ContainerParagraph } from 'app/shared/components/Layout/styles';
 import { ExamenPorCliente } from '../../models/ExamenPorCliente';
 import { ListaExamenesPorCliente } from '../../components/cliente/ListarExamenesPorCliente';
 import { ObtieneDetalleCliente } from '../../components/cliente/ObtenerDetalleCliente';
 import { PaginadorExamenesPorCliente } from '../../components/cliente/PaginadorExamenesPorCliente';
 import { useEffect } from 'react';
-import { ContainerParagraph } from 'app/shared/components/Layout/styles';
 
 interface GestionDetalleClienteProps {
   examenes: Array<ExamenPorCliente>;
