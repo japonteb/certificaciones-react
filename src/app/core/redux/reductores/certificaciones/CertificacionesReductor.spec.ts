@@ -2,7 +2,7 @@ import { Certificacion } from 'app/feature/Producto/models/Certificacion';
 import { EstadoCertificacion } from 'app/core/redux/modelo/EstadoCertificacion';
 
 import { agregarNuevaCertificacion } from '../../acciones/certificaciones/CertificacionesAcciones';
-import reductorCertificacions from './certificacionesReductor';
+import reductorCertificaciones from './certificacionesReductor';
 
 describe('Reductor certificaciones', () => {
   it('debería agregar certificaciones', () => {
@@ -24,7 +24,7 @@ describe('Reductor certificaciones', () => {
     };
 
     // Act
-    const nuevoEstado = reductorCertificacions(
+    const nuevoEstado = reductorCertificaciones(
       estadoInicial,
       agregarNuevaCertificacion(nuevaCertificacion)
     );
