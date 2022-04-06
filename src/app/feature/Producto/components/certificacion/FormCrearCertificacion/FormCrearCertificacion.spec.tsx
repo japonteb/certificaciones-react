@@ -33,8 +33,10 @@ describe('FormCrearCertificacion test', () => {
     expect(spans.length).toBe(4);
     expect(spans[0].textContent).toBe('El campo nombre es requerido.');
     expect(spans[1].textContent).toBe('El campo detalle es requerido.');
-    expect(spans[2].textContent).toBe('El campo duración es requerido.');
-    expect(spans[3].textContent).toBe('El campo precio es requerido.');
+    expect(spans[2].textContent).toBe(
+      'La duración debe ser un número positivo'
+    );
+    expect(spans[3].textContent).toBe('El precio debe ser un número positivo');
   });
 
   it('should fail on submit three fields missing', async () => {
@@ -52,8 +54,10 @@ describe('FormCrearCertificacion test', () => {
     const spans = elem.querySelectorAll('span');
     expect(spans.length).toBe(3);
     expect(spans[0].textContent).toBe('El campo detalle es requerido.');
-    expect(spans[1].textContent).toBe('El campo duración es requerido.');
-    expect(spans[2].textContent).toBe('El campo precio es requerido.');
+    expect(spans[1].textContent).toBe(
+      'La duración debe ser un número positivo'
+    );
+    expect(spans[2].textContent).toBe('El precio debe ser un número positivo');
   });
 
   it('should fail on submit two fields missing', async () => {
@@ -64,7 +68,7 @@ describe('FormCrearCertificacion test', () => {
     const submitButton = elem.querySelector('button[type="submit"]');
 
     await wait(() => {
-      nombre && fireEvent.change(nombre, setTextEvent('detalle', 'Lorem'));
+      nombre && fireEvent.change(nombre, setTextEvent('nombre', 'Lorem'));
     });
     await wait(() => {
       detalle && fireEvent.change(detalle, setTextEvent('detalle', 'Ipsum'));
@@ -75,8 +79,10 @@ describe('FormCrearCertificacion test', () => {
     });
     const spans = elem.querySelectorAll('span');
     expect(spans.length).toBe(2);
-    expect(spans[0].textContent).toBe('El campo duración es requerido.');
-    expect(spans[1].textContent).toBe('El campo precio es requerido.');
+    expect(spans[0].textContent).toBe(
+      'La duración debe ser un número positivo'
+    );
+    expect(spans[1].textContent).toBe('El precio debe ser un número positivo');
   });
 
   it('should fail on submit one field missing', async () => {
@@ -102,8 +108,8 @@ describe('FormCrearCertificacion test', () => {
       submitButton && fireEvent.click(submitButton);
     });
     const spans = elem.querySelectorAll('span');
-    expect(spans.length).toBe(1);
-    expect(spans[1].textContent).toBe('El campo precio es requerido.');
+    expect(spans.length).toBe(3);
+    expect(spans[1].textContent).toBe('La duración debe ser un número');
   });
 
   it('should submit', async () => {
@@ -136,7 +142,7 @@ describe('FormCrearCertificacion test', () => {
 
     expect(formSubmitted.nombre).toBe('Lorem');
     expect(formSubmitted.detalle).toBe('Ipsum');
-    expect(formSubmitted.duracion).toBe('120');
-    expect(formSubmitted.precio).toBe('1000');
+    expect(formSubmitted.duracion).toBe(120);
+    expect(formSubmitted.precio).toBe(1000);
   });
 });

@@ -2,36 +2,82 @@
 
 exports[`FormCrearCertificacion test should match snapshot 1`] = `
 <div>
-  <form>
+  <form
+    class="sc-AxirZ hDUOfy"
+  >
     <h2>
       Form test
     </h2>
-    <input
-      class="sc-AxirZ eAukyj"
-      name="nombre"
-      placeholder="Nombre de la certificación"
-      value=""
-    />
-    <input
-      class="sc-AxirZ eAukyj"
-      name="detalle"
-      placeholder="Detalle de la certificación"
-      value=""
-    />
-    <input
-      class="sc-AxirZ eAukyj"
-      name="duracion"
-      placeholder="Duración en horas"
-      value=""
-    />
-    <input
-      class="sc-AxirZ eAukyj"
-      name="precio"
-      placeholder="Precio en COP"
-      value=""
-    />
+    <div
+      class="sc-AxiKw eFNUgS"
+    >
+      <label
+        class="sc-AxgMl bMdvsc"
+        for="nombre"
+      >
+        Nombre de la certificación:
+      </label>
+      <input
+        class="sc-AxhUy fHwnCS"
+        id="nombre"
+        name="nombre"
+        placeholder="Ingresa el nombre"
+        value=""
+      />
+    </div>
+    <div
+      class="sc-AxiKw eFNUgS"
+    >
+      <label
+        class="sc-AxgMl bMdvsc"
+        for="detalle"
+      >
+        Detalle de la certificación:
+      </label>
+      <input
+        class="sc-AxhUy fHwnCS"
+        id="detalle"
+        name="detalle"
+        placeholder="Ingresa el detalle"
+        value=""
+      />
+    </div>
+    <div
+      class="sc-AxiKw eFNUgS"
+    >
+      <label
+        class="sc-AxgMl bMdvsc"
+        for="duracion"
+      >
+        Duración de la certificación:
+      </label>
+      <input
+        class="sc-AxhUy fHwnCS"
+        id="duracion"
+        name="duracion"
+        placeholder="Ingresa la duración en horas"
+        value="0"
+      />
+    </div>
+    <div
+      class="sc-AxiKw eFNUgS"
+    >
+      <label
+        class="sc-AxgMl bMdvsc"
+        for="precio"
+      >
+        Precio de la certificación:
+      </label>
+      <input
+        class="sc-AxhUy fHwnCS"
+        id="precio"
+        name="precio"
+        placeholder="Ingresa el precio en COP"
+        value="0"
+      />
+    </div>
     <button
-      class="sc-AxjAm kgxTKy"
+      class="sc-AxhCb fTPisR"
       type="submit"
     >
       Registrar

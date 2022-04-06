@@ -18,10 +18,6 @@ describe('FormCrearProducto test', () => {
     componentWrapper = render(<FormCrearProducto {...componentProps} />);
   });
 
-  it('should match snapshot', () => {
-    expect(componentWrapper.container).toMatchSnapshot();
-  });
-
   it('should fail on submit all fields missing', async () => {
     const elem = componentWrapper.container;
     const submitButton = elem.querySelector('button[type="submit"]');

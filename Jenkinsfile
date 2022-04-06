@@ -31,7 +31,7 @@ pipeline {
     stage('Unit Test') {
       steps {
         echo "------------>Testing<------------"
-//        sh 'npm run test -- --watch=false'
+        sh 'npm run test:coverage'
       }
     }
 
@@ -69,6 +69,7 @@ pipeline {
   post {
     always {
       echo 'This will always run'
+      junit './*.xml'
     }
     success {
       echo 'This will run only if successful'

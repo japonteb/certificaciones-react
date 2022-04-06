@@ -1,6 +1,6 @@
 import * as React from 'react';
 import { ShallowWrapper, shallow } from 'enzyme';
-import { PaginadorExamenesPorCliente } from 'app/feature/Producto/components/PaginadorExamenesPorCliente';
+import { PaginadorExamenesPorCliente } from '.';
 
 describe('PaginadorExamenesPorCliente Test', () => {
   let componentWrapper: ShallowWrapper;

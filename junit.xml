@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="jest tests" tests="25" failures="0" errors="0" time="12.636">
+  <testsuite name="PaginadorCertificaciones Test" errors="0" failures="0" skipped="0" timestamp="2022-04-06T21:28:10" time="4.604" tests="3">
+    <testcase classname="PaginadorCertificaciones Test should match snapshot" name="PaginadorCertificaciones Test should match snapshot" time="0.023">
+    </testcase>
+    <testcase classname="PaginadorCertificaciones Test Renderizar con menos de 10 certificaciones no debe pintar botones" name="PaginadorCertificaciones Test Renderizar con menos de 10 certificaciones no debe pintar botones" time="0.002">
+    </testcase>
+    <testcase classname="PaginadorCertificaciones Test Renderizar con  20 certificaciones debe pintar 2 botones" name="PaginadorCertificaciones Test Renderizar con  20 certificaciones debe pintar 2 botones" time="0.008">
+    </testcase>
+  </testsuite>
+  <testsuite name="PaginadorClientes Test" errors="0" failures="0" skipped="0" timestamp="2022-04-06T21:28:10" time="4.762" tests="3">
+    <testcase classname="PaginadorClientes Test should match snapshot" name="PaginadorClientes Test should match snapshot" time="0.026">
+    </testcase>
+    <testcase classname="PaginadorClientes Test Renderizar con menos de 10 clientes no debe pintar botones" name="PaginadorClientes Test Renderizar con menos de 10 clientes no debe pintar botones" time="0.002">
+    </testcase>
+    <testcase classname="PaginadorClientes Test Renderizar con  20 clientes debe pintar 2 botones" name="PaginadorClientes Test Renderizar con  20 clientes debe pintar 2 botones" time="0.008">
+    </testcase>
+  </testsuite>
+  <testsuite name="Reductor certificaciones" errors="0" failures="0" skipped="0" timestamp="2022-04-06T21:28:10" time="4.862" tests="1">
+    <testcase classname="Reductor certificaciones debería agregar certificaciones" name="Reductor certificaciones debería agregar certificaciones" time="0.009">
+    </testcase>
+  </testsuite>
+  <testsuite name="Reductor productos" errors="0" failures="0" skipped="0" timestamp="2022-04-06T21:28:10" time="4.875" tests="1">
+    <testcase classname="Reductor productos debería agregar productos" name="Reductor productos debería agregar productos" time="0.008">
+    </testcase>
+  </testsuite>
+  <testsuite name="Reductor examenes" errors="0" failures="0" skipped="0" timestamp="2022-04-06T21:28:10" time="4.962" tests="1">
+    <testcase classname="Reductor examenes debería agregar examenes" name="Reductor examenes debería agregar examenes" time="0.009">
+    </testcase>
+  </testsuite>
+  <testsuite name="PaginadorExamenesPorCliente Test" errors="0" failures="0" skipped="0" timestamp="2022-04-06T21:28:14" time="0.773" tests="3">
+    <testcase classname="PaginadorExamenesPorCliente Test should match snapshot" name="PaginadorExamenesPorCliente Test should match snapshot" time="0.003">
+    </testcase>
+    <testcase classname="PaginadorExamenesPorCliente Test Renderizar con menos de 10 examenes no debe pintar botones" name="PaginadorExamenesPorCliente Test Renderizar con menos de 10 examenes no debe pintar botones" time="0.001">
+    </testcase>
+    <testcase classname="PaginadorExamenesPorCliente Test Renderizar con  20 examenes debe pintar 2 botones" name="PaginadorExamenesPorCliente Test Renderizar con  20 examenes debe pintar 2 botones" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="PaginadorProductos Test" errors="0" failures="0" skipped="0" timestamp="2022-04-06T21:28:14" time="0.715" tests="3">
+    <testcase classname="PaginadorProductos Test should match snapshot" name="PaginadorProductos Test should match snapshot" time="0.003">
+    </testcase>
+    <testcase classname="PaginadorProductos Test Renderizar con menos de 10 productos no debe pintar botones" name="PaginadorProductos Test Renderizar con menos de 10 productos no debe pintar botones" time="0.001">
+    </testcase>
+    <testcase classname="PaginadorProductos Test Renderizar con  20 productos debe pintar 2 botones" name="PaginadorProductos Test Renderizar con  20 productos debe pintar 2 botones" time="0.002">
+    </testcase>
+  </testsuite>
+  <testsuite name="FormCrearProducto test" errors="0" failures="0" skipped="0" timestamp="2022-04-06T21:28:10" time="7.026" tests="4">
+    <testcase classname="FormCrearProducto test should fail on submit all fields missing" name="FormCrearProducto test should fail on submit all fields missing" time="0.063">
+    </testcase>
+    <testcase classname="FormCrearProducto test should fail on submit two fields missing" name="FormCrearProducto test should fail on submit two fields missing" time="0.048">
+    </testcase>
+    <testcase classname="FormCrearProducto test should fail on submit two fields missing" name="FormCrearProducto test should fail on submit two fields missing" time="0.033">
+    </testcase>
+    <testcase classname="FormCrearProducto test should submit" name="FormCrearProducto test should submit" time="0.082">
+    </testcase>
+  </testsuite>
+  <testsuite name="FormCrearCertificacion test" errors="0" failures="0" skipped="0" timestamp="2022-04-06T21:28:10" time="7.263" tests="6">
+    <testcase classname="FormCrearCertificacion test should match snapshot" name="FormCrearCertificacion test should match snapshot" time="0.053">
+    </testcase>
+    <testcase classname="FormCrearCertificacion test should fail on submit all fields missing" name="FormCrearCertificacion test should fail on submit all fields missing" time="0.057">
+    </testcase>
+    <testcase classname="FormCrearCertificacion test should fail on submit three fields missing" name="FormCrearCertificacion test should fail on submit three fields missing" time="0.046">
+    </testcase>
+    <testcase classname="FormCrearCertificacion test should fail on submit two fields missing" name="FormCrearCertificacion test should fail on submit two fields missing" time="0.066">
+    </testcase>
+    <testcase classname="FormCrearCertificacion test should fail on submit one field missing" name="FormCrearCertificacion test should fail on submit one field missing" time="0.09">
+    </testcase>
+    <testcase classname="FormCrearCertificacion test should submit" name="FormCrearCertificacion test should submit" time="0.116">
+    </testcase>
+  </testsuite>
+</testsuites>
