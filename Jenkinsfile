@@ -12,21 +12,6 @@ pipeline {
         disableConcurrentBuilds()
   }
 
-  //Una sección que define las herramientas “preinstaladas” en Jenkins
-  tools {
-    jdk 'JDK8_Centos' //Verisión preinstalada en la Configuración del Master
-  }
-/*    Versiones disponibles
-      JDK8_Mac
-      JDK6_Centos
-      JDK7_Centos
-      JDK8_Centos
-      JDK10_Centos
-      JDK11_Centos
-      JDK13_Centos
-      JDK14_Centos
-*/
-
   //Aquí comienzan los “items” del Pipeline
   stages{
     stage('Checkout') {
@@ -66,9 +51,10 @@ pipeline {
 
     stage('Static Code Analysis') {
       steps{
-        sonarqubeMasQualityGatesP(sonarKey:'co.com.ceiba.adn:javier.certificaciones.front-javier.aponte',
-        sonarName:'CeibaADN-Ceiba-CertificacionesFront-javier.aponte',
-        sonarPathProperties:'./sonar-project.properties')
+        echo '------------>Static Code Analysis<------------'
+        withSonarQubeEnv('Sonar') {
+            sh "${tool name: 'SonarScanner', type:'hudson.plugins.sonar.SonarRunnerInstallation'}/bin/sonar-scanner -Dproject.settings=sonar-project.properties"
+        }
       }
     }
 
