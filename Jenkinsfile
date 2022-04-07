@@ -31,7 +31,7 @@ pipeline {
     stage('Unit Test') {
       steps {
         echo "------------>Testing<------------"
-        sh 'npm run test:coverage'
+        sh 'npm run test'
       }
     }
 

@@ -6,6 +6,7 @@
     "@types/react-helmet": "^6.0.0",
     "axios": "^0.19.2",
     "cross-env": "^7.0.2",
+    "cypress": "^9.5.3",
     "formik": "^2.1.4",
     "prop-types": "^15.7.2",
     "react": "^16.13.1",
@@ -82,10 +83,10 @@
     ],
     "coverageThreshold": {
       "global": {
-        "branches": 10,
-        "functions": 10,
-        "lines": 10,
-        "statements": 10
+        "branches": 90,
+        "functions": 90,
+        "lines": 90,
+        "statements": 90
       }
     },
     "coverageReporters": [
