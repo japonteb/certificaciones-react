@@ -15,6 +15,7 @@ interface GestionCertificacionesProps {
   hayError: boolean;
   agregarNuevaCertificacion: (certificaciones: Certificacion) => void;
   eliminarCertificacion: (certificaciones: Certificacion) => void;
+  limpiarMensajeCertificacion: () => void;
   listarCertificaciones: (numeroPagina: number) => void;
 }
 
@@ -25,6 +26,7 @@ export const GestionCertificaciones: React.FC<GestionCertificacionesProps> = ({
   hayError,
   agregarNuevaCertificacion,
   eliminarCertificacion,
+  limpiarMensajeCertificacion,
   listarCertificaciones,
 }) => {
   useEffect(() => {
@@ -32,7 +34,11 @@ export const GestionCertificaciones: React.FC<GestionCertificacionesProps> = ({
   }, [listarCertificaciones]);
   return (
     <>
-      <Message message={mensajesCertificaciones} hasError={hayError} />
+      <Message
+        message={mensajesCertificaciones}
+        hasError={hayError}
+        cleanMessage={limpiarMensajeCertificacion}
+      />
       <DivContainer>
         <DivRow>
           <FormCrearCertificacion
@@ -62,6 +68,7 @@ GestionCertificaciones.propTypes = {
   hayError: PropTypes.bool.isRequired,
   agregarNuevaCertificacion: PropTypes.func.isRequired,
   eliminarCertificacion: PropTypes.func.isRequired,
+  limpiarMensajeCertificacion: PropTypes.func.isRequired,
   listarCertificaciones: PropTypes.func.isRequired,
 };
 

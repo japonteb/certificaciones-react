@@ -2,6 +2,7 @@ import {
   AGREGAR_CERTIFICACION,
   AGREGAR_MENSAJE_ERROR_CERTIFICACION,
   ELIMINAR_CERTIFICACION,
+  LIMPIAR_MENSAJES_CERTIFICACION,
   LISTAR_CERTIFICACIONES,
   TiposAccionesCertificacion,
 } from './CertificacionesTiposAcciones';
@@ -37,6 +38,14 @@ export function listarCertificaciones(
     type: LISTAR_CERTIFICACIONES,
     payload: certificaciones,
     cantidadTotalCertificacion,
+  };
+}
+
+export function limpiarMensajeCertificacion(): TiposAccionesCertificacion {
+  return {
+    type: LIMPIAR_MENSAJES_CERTIFICACION,
+    mensajesCertificaciones: '',
+    hayError: false,
   };
 }
 

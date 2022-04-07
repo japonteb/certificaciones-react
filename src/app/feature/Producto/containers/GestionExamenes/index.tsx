@@ -13,6 +13,7 @@ interface GestionExamenesProps {
   certificaciones: Array<Certificacion>;
   mensajesExamenes: string;
   hayError: boolean;
+  limpiarMensajeExamen: () => void;
   listarClientes: (numeroPagina: number) => void;
   listarCertificaciones: (numeroPagina: number) => void;
   agregarNuevoExamen: (examen: RegistrarExamen) => void;
@@ -23,6 +24,7 @@ export const GestionExamenes: React.FC<GestionExamenesProps> = ({
   certificaciones,
   mensajesExamenes,
   hayError,
+  limpiarMensajeExamen,
   listarClientes,
   listarCertificaciones,
   agregarNuevoExamen,
@@ -33,7 +35,11 @@ export const GestionExamenes: React.FC<GestionExamenesProps> = ({
   }, [listarClientes, listarCertificaciones]);
   return (
     <DivContainer>
-      <Message message={mensajesExamenes} hasError={hayError} />
+      <Message
+        message={mensajesExamenes}
+        hasError={hayError}
+        cleanMessage={limpiarMensajeExamen}
+      />
       <DivRow>
         <FormCrearExamen
           clientes={clientes}
@@ -51,6 +57,7 @@ GestionExamenes.propTypes = {
   certificaciones: PropTypes.array.isRequired,
   mensajesExamenes: PropTypes.string.isRequired,
   hayError: PropTypes.bool.isRequired,
+  limpiarMensajeExamen: PropTypes.func.isRequired,
   listarClientes: PropTypes.func.isRequired,
   listarCertificaciones: PropTypes.func.isRequired,
   agregarNuevoExamen: PropTypes.func.isRequired,

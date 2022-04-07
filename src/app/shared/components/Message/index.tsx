@@ -6,10 +6,16 @@ import { useEffect, useState } from 'react';
 interface MessageProps {
   message: string;
   hasError: boolean;
+  cleanMessage: () => void;
 }
 
-export const Message: React.FC<MessageProps> = ({ message, hasError }) => {
+export const Message: React.FC<MessageProps> = ({
+  message,
+  hasError,
+  cleanMessage,
+}) => {
   const [visible, setVisible] = useState(false);
+  const TIEMPO_MOSTRAR_MENSAJE = 3000;
 
   useEffect(() => {
     if (!message) {
@@ -20,9 +26,10 @@ export const Message: React.FC<MessageProps> = ({ message, hasError }) => {
     setVisible(true);
     const timer = setTimeout(() => {
       setVisible(false);
-    }, 3000);
+      cleanMessage();
+    }, TIEMPO_MOSTRAR_MENSAJE);
     return () => clearTimeout(timer);
-  }, [message]);
+  }, [message, cleanMessage]);
 
   return (
     <>
@@ -39,4 +46,5 @@ export const Message: React.FC<MessageProps> = ({ message, hasError }) => {
 Message.propTypes = {
   message: PropTypes.string.isRequired,
   hasError: PropTypes.bool.isRequired,
+  cleanMessage: PropTypes.func.isRequired,
 };

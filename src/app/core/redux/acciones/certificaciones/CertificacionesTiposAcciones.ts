@@ -4,6 +4,7 @@ export const AGREGAR_CERTIFICACION = 'AGREGAR_CERTIFICACION';
 export const AGREGAR_MENSAJE_ERROR_CERTIFICACION =
   'AGREGAR_MENSAJE_ERROR_CERTIFICACION';
 export const ELIMINAR_CERTIFICACION = 'ELIMINAR_CERTIFICACION';
+export const LIMPIAR_MENSAJES_CERTIFICACION = 'LIMPIAR_MENSAJES_CERTIFICACION';
 export const LISTAR_CERTIFICACIONES = 'LISTAR_CERTIFICACIONES';
 
 interface AccionListarCertificaciones {
@@ -30,8 +31,15 @@ interface AccionAgregarMensajeErrorCertificacion {
   hayError: boolean;
 }
 
+interface AccionLimpiarMensajeCertificacion {
+  type: typeof LIMPIAR_MENSAJES_CERTIFICACION;
+  mensajesCertificaciones: string;
+  hayError: boolean;
+}
+
 export type TiposAccionesCertificacion =
   | AccionAgregarCertificacion
   | AccionAgregarMensajeErrorCertificacion
   | AccionListarCertificaciones
+  | AccionLimpiarMensajeCertificacion
   | AccionEliminarCertificacion;

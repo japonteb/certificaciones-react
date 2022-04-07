@@ -3,6 +3,7 @@ import { RegistrarExamen } from 'app/feature/Producto/models/RegistrarExamen';
 
 export const AGREGAR_EXAMEN = 'AGREGAR_EXAMEN';
 export const AGREGAR_MENSAJE_ERROR_EXAMEN = 'AGREGAR_MENSAJE_ERROR_EXAMEN';
+export const LIMPIAR_MENSAJES_EXAMEN = 'LIMPIAR_MENSAJES_EXAMEN';
 export const LISTAR_EXAMENES_POR_CLIENTE = 'LISTAR_EXAMENES_POR_CLIENTE';
 
 interface AccionListarExamenesPorExamen {
@@ -23,7 +24,14 @@ interface AccionAgregarMensajeErrorExamen {
   hayError: boolean;
 }
 
+interface AccionLimpiarMensajeExamen {
+  type: typeof LIMPIAR_MENSAJES_EXAMEN;
+  mensajesExamenes: string;
+  hayError: boolean;
+}
+
 export type TiposAccionesExamen =
   | AccionAgregarExamen
   | AccionAgregarMensajeErrorExamen
+  | AccionLimpiarMensajeExamen
   | AccionListarExamenesPorExamen;

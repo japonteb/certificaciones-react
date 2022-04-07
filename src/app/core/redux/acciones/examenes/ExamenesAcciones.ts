@@ -1,6 +1,7 @@
 import {
   AGREGAR_EXAMEN,
   AGREGAR_MENSAJE_ERROR_EXAMEN,
+  LIMPIAR_MENSAJES_EXAMEN,
   LISTAR_EXAMENES_POR_CLIENTE,
   TiposAccionesExamen,
 } from './ExamenesTiposAcciones';
@@ -40,6 +41,14 @@ export function agregarNuevoExamenAsync(examen: RegistrarExamen) {
       .catch((error: any) => {
         dispacth(agregarMensajeErrorExamen(error.response.data.message));
       });
+  };
+}
+
+export function limpiarMensajeExamen(): TiposAccionesExamen {
+  return {
+    type: LIMPIAR_MENSAJES_EXAMEN,
+    mensajesExamenes: '',
+    hayError: false,
   };
 }
 

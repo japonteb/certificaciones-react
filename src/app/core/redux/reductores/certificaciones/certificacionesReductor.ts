@@ -2,6 +2,7 @@ import {
   AGREGAR_CERTIFICACION,
   AGREGAR_MENSAJE_ERROR_CERTIFICACION,
   ELIMINAR_CERTIFICACION,
+  LIMPIAR_MENSAJES_CERTIFICACION,
   LISTAR_CERTIFICACIONES,
   TiposAccionesCertificacion,
 } from './../../acciones/certificaciones/CertificacionesTiposAcciones';
@@ -39,6 +40,14 @@ export default function (
     }
 
     case AGREGAR_MENSAJE_ERROR_CERTIFICACION: {
+      return {
+        ...state,
+        mensajesCertificaciones: action.mensajesCertificaciones,
+        hayError: action.hayError,
+      };
+    }
+
+    case LIMPIAR_MENSAJES_CERTIFICACION: {
       return {
         ...state,
         mensajesCertificaciones: action.mensajesCertificaciones,

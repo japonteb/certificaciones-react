@@ -1,6 +1,7 @@
 import {
   agregarNuevaCertificacionAsync,
   eliminarCertificacionAsync,
+  limpiarMensajeCertificacion,
   listarCertificacionesAsync,
 } from 'app/core/redux/acciones/certificaciones/CertificacionesAcciones';
 import { EstadoGeneral } from 'app/core/redux/modelo/EstadoGeneral';
@@ -22,4 +23,5 @@ export const ProveedorGestionCertificaciones = connect(mapStateToProps, {
   agregarNuevaCertificacion: agregarNuevaCertificacionAsync,
   listarCertificaciones: listarCertificacionesAsync,
   eliminarCertificacion: eliminarCertificacionAsync,
+  limpiarMensajeCertificacion,
 })(GestionCertificaciones);
