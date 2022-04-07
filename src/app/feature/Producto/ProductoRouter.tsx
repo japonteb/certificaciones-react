@@ -15,7 +15,7 @@ export const ProductoRouter = () => (
       <Route path="/productos" component={MainPage}></Route>
       <Route path="/certificaciones" component={CertificacionPage}></Route>
       <Route path="/clientes" component={ClientePage}></Route>
-      <Route path="/clientes-por-id" component={DetalleClientePage}></Route>
+      <Route path="/clientes-por-id/:id" component={DetalleClientePage}></Route>
       <Route path="/examenes" component={ExamenPage}></Route>
     </Switch>
   </React.Suspense>

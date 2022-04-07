@@ -8,7 +8,10 @@ import { GestionProductos } from '../containers/GestionProductos';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state: EstadoGeneral) => {
-  return state.productos;
+  return {
+    productos: state.estadoProductos.productos,
+    cantidadTotalProducto: state.estadoProductos.cantidadTotalProducto,
+  };
 };
 
 export const ProveedorGestionProductos = connect(mapStateToProps, {

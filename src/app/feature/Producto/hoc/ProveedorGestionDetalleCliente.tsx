@@ -4,8 +4,17 @@ import { connect } from 'react-redux';
 import { listarExamenesPorClienteAsync } from 'app/core/redux/acciones/examenes/ExamenesAcciones';
 import { obtenerDetalleClienteAsync } from 'app/core/redux/acciones/clientes/ClientesAcciones';
 
-const mapStateToProps = (state: EstadoGeneral) => {
-  return { ...state.examenes, ...state.cliente };
+const mapStateToProps = (
+  state: EstadoGeneral,
+  { clienteId }: { clienteId: string }
+) => {
+  return {
+    examenes: state.estadoExamenes.examenes,
+    cliente: state.estadoClientes.cliente,
+    cantidadTotalExamenPorCliente:
+      state.estadoExamenes.cantidadTotalExamenPorCliente,
+    clienteId: Number(clienteId),
+  };
 };
 
 export const ProveedorGestionDetalleCliente = connect(mapStateToProps, {

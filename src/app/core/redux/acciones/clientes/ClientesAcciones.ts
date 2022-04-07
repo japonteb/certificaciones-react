@@ -32,9 +32,9 @@ export function obtenerDetalleCliente(cliente: Cliente): TiposAccionesCliente {
   };
 }
 
-export function obtenerDetalleClienteAsync() {
+export function obtenerDetalleClienteAsync(clienteId: number) {
   return function (dispacth: any) {
-    ClienteRepositorio.consultarClientePorId(2).then((respuesta: any) =>
+    ClienteRepositorio.consultarClientePorId(clienteId).then((respuesta: any) =>
       dispacth(obtenerDetalleCliente(respuesta.data))
     );
   };

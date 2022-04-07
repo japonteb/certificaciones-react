@@ -10,6 +10,7 @@ describe('Reductor certificaciones', () => {
     const estadoInicial: EstadoCertificacion = {
       cantidadTotalCertificacion: 2,
       certificaciones: [],
+      mensajesCertificaciones: '',
     };
     const nuevaCertificacion: Certificacion = {
       id: -1,
@@ -26,7 +27,10 @@ describe('Reductor certificaciones', () => {
     // Act
     const nuevoEstado = reductorCertificaciones(
       estadoInicial,
-      agregarNuevaCertificacion(nuevaCertificacion)
+      agregarNuevaCertificacion(
+        nuevaCertificacion,
+        'Certificación agregada en pruebas'
+      )
     );
 
     // Assert

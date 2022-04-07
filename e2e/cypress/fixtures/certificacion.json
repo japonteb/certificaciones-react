@@ -1,7 +1,7 @@
 {
   "id": 1,
-  "nombre": "Java",
-  "detalle": "Java EE y Servicios Web",
-  "duracion": 120,
+  "nombre": "Prueba Nombre Cypress",
+  "detalle": "Prueba Detalle Cypress",
+  "duracion": 100,
   "precio": 1000
 }

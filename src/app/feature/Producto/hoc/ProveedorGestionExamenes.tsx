@@ -6,7 +6,15 @@ import { listarCertificacionesAsync } from 'app/core/redux/acciones/certificacio
 import { listarClientesAsync } from 'app/core/redux/acciones/clientes/ClientesAcciones';
 
 const mapStateToProps = (state: EstadoGeneral) => {
-  return { ...state.clientes, ...state.certificaciones };
+  console.log('Hola Mundo');
+  console.log(state);
+
+  return {
+    clientes: state.estadoClientes.clientes,
+    certificaciones: state.estadoCertificaciones.certificaciones,
+    mensajesExamenes: state.estadoExamenes.mensajesExamenes,
+    hayError: state.estadoExamenes.hayError,
+  };
 };
 
 export const ProveedorGestionExamenes = connect(mapStateToProps, {

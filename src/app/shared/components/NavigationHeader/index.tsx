@@ -8,7 +8,6 @@ export const NavigationHeader: React.FC = () => {
     { label: 'Inicio', url: '/home' },
     { label: 'Certificaciones', url: '/certificaciones' },
     { label: 'Clientes', url: '/clientes' },
-    { label: 'Detalle cliente', url: '/clientes-por-id' },
     { label: 'Exámenes', url: '/examenes' },
   ];
   return (

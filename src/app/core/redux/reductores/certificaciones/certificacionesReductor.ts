@@ -10,6 +10,7 @@ import { EstadoCertificacion } from '../../modelo/EstadoCertificacion';
 const initialState: EstadoCertificacion = {
   certificaciones: Array<Certificacion>(),
   cantidadTotalCertificacion: 0,
+  mensajesCertificaciones: '',
 };
 
 export default function (
@@ -31,6 +32,7 @@ export default function (
       return {
         ...state,
         certificaciones: [...state.certificaciones, certificacion],
+        mensajesCertificaciones: action.mensajesCertificaciones,
       };
     }
 
@@ -41,6 +43,7 @@ export default function (
         certificaciones: [
           ...state.certificaciones.filter((c) => c.id !== certificacion.id),
         ],
+        mensajesCertificaciones: action.mensajesCertificaciones,
       };
     }
 

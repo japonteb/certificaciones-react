@@ -7,6 +7,17 @@ import {
 import { Certificacion } from 'app/feature/Producto/models/Certificacion';
 import { CertificacionRepositorio } from 'app/core/api/certificaciones.repositorio';
 
+export function agregarNuevaCertificacion(
+  certificacion: Certificacion,
+  mensajesCertificaciones: string
+): TiposAccionesCertificacion {
+  return {
+    type: AGREGAR_CERTIFICACION,
+    payload: certificacion,
+    mensajesCertificaciones,
+  };
+}
+
 export function listarCertificaciones(
   certificaciones: Array<Certificacion>,
   cantidadTotalCertificacion: number
@@ -18,37 +29,48 @@ export function listarCertificaciones(
   };
 }
 
-export function agregarNuevaCertificacion(
-  certificacion: Certificacion
-): TiposAccionesCertificacion {
-  return {
-    type: AGREGAR_CERTIFICACION,
-    payload: certificacion,
-  };
-}
-
 export function eliminarCertificacion(
-  certificacion: Certificacion
+  certificacion: Certificacion,
+  mensajesCertificaciones: string
 ): TiposAccionesCertificacion {
   return {
     type: ELIMINAR_CERTIFICACION,
     payload: certificacion,
+    mensajesCertificaciones,
   };
 }
 
 export function agregarNuevaCertificacionAsync(certificacion: Certificacion) {
   return function (dispacth: any) {
-    CertificacionRepositorio.agregarCertificacion(certificacion).then(
-      (respuesta: any) => dispacth(agregarNuevaCertificacion(certificacion))
-    );
+    CertificacionRepositorio.agregarCertificacion(certificacion)
+      .then((respuesta: any) => {
+        dispacth(
+          agregarNuevaCertificacion(
+            certificacion,
+            'La certificación fue almacenada con éxito'
+          )
+        );
+      })
+      .catch((error: any) => {
+        console.log(error.response.data.message);
+      });
   };
 }
 
 export function eliminarCertificacionAsync(certificacion: Certificacion) {
   return function (dispacth: any) {
-    CertificacionRepositorio.eliminarCertificacion(certificacion.id).then(
-      (respuesta: any) => dispacth(eliminarCertificacion(certificacion))
-    );
+    CertificacionRepositorio.eliminarCertificacion(certificacion.id)
+      .then((respuesta: any) =>
+        dispacth(
+          eliminarCertificacion(
+            certificacion,
+            'La certificación fue eliminada con éxito'
+          )
+        )
+      )
+      .catch((error: any) => {
+        console.log(error.response.data.message);
+      });
   };
 }
 

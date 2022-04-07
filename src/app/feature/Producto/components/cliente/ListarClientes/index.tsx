@@ -1,7 +1,9 @@
 import * as PropTypes from 'prop-types';
 import * as React from 'react';
 import { ContainerParagraph, Table } from 'app/shared/components/Layout/styles';
+import { AiOutlineSearch } from 'react-icons/ai';
 import { Cliente } from 'app/feature/Producto/models/Cliente';
+import { Link } from 'app/shared/components/Link';
 
 export interface ListaClientesProps {
   clientes: Array<Cliente>;
@@ -32,7 +34,11 @@ export const ListaClientes: React.FC<ListaClientesProps> = ({ clientes }) => {
               <tr key={cliente.id}>
                 <td>{cliente.nombre}</td>
                 <td>{cliente.tipoCliente}</td>
-                <td>Detalle</td>
+                <td>
+                  <Link to={`clientes-por-id/${cliente.id}`}>
+                    <AiOutlineSearch />
+                  </Link>
+                </td>
               </tr>
             );
           })}

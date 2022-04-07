@@ -32,9 +32,9 @@ interface FormCrearExamenProp {
 const validationSchema = Yup.object().shape<FormValues>({
   clienteId: Yup.number().required(),
   certificacionId: Yup.number().required(),
-  fechaPresentacion: Yup.date()
-    .default(() => new Date())
-    .required('El campo fecha de presentación del examen es requerido.'),
+  fechaPresentacion: Yup.date().required(
+    'El campo fecha de presentación del examen es requerido.'
+  ),
 });
 
 export const FormCrearExamen: React.FC<FormCrearExamenProp> = ({
@@ -53,6 +53,11 @@ export const FormCrearExamen: React.FC<FormCrearExamenProp> = ({
     values: FormValues,
     { resetForm }: FormikHelpers<FormValues>
   ) => {
+    console.log('El id del cliente es:');
+    console.log(values.clienteId);
+    console.log('El id de la certificación es:');
+    console.log(values.certificacionId);
+
     const cliente = clientes.find(
       (cli) => cli.id === Number(values.clienteId)
     ) || {
@@ -75,6 +80,7 @@ export const FormCrearExamen: React.FC<FormCrearExamenProp> = ({
       fechaPresentacion: fechaPresentacion.toISOString(),
     });
     resetForm();
+    setFechaPresentacion(new Date());
   };
   const formik = useFormik({
     initialValues,

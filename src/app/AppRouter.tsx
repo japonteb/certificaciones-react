@@ -15,7 +15,7 @@ export const AppRouter = () => {
         <Route path="/productos" component={ProductoRouter} />
         <Route path="/certificaciones" component={ProductoRouter} />
         <Route path="/clientes" component={ProductoRouter} />
-        <Route path="/clientes-por-id" component={ProductoRouter} />
+        <Route path="/clientes-por-id/:id" component={ProductoRouter} />
         <Route path="/examenes" component={ProductoRouter} />
       </Switch>
     </BrowserRouter>

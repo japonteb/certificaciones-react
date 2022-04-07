@@ -8,8 +8,8 @@ import { useEffect } from 'react';
 
 interface GestionClientesProps {
   clientes: Array<Cliente>;
-  listarClientes: (numeroPagina: number) => void;
   cantidadTotalCliente: number;
+  listarClientes: (numeroPagina: number) => void;
 }
 
 export const GestionClientes: React.FC<GestionClientesProps> = ({

@@ -8,7 +8,13 @@ import { GestionCertificaciones } from '../containers/GestionCertificaciones';
 import { connect } from 'react-redux';
 
 const mapStateToProps = (state: EstadoGeneral) => {
-  return state.certificaciones;
+  return {
+    certificaciones: state.estadoCertificaciones.certificaciones,
+    mensajesCertificaciones:
+      state.estadoCertificaciones.mensajesCertificaciones,
+    cantidadTotalCertificacion:
+      state.estadoCertificaciones.cantidadTotalCertificacion,
+  };
 };
 
 export const ProveedorGestionCertificaciones = connect(mapStateToProps, {

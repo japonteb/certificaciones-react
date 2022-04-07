@@ -13,11 +13,13 @@ interface AccionListarCertificaciones {
 interface AccionAgregarCertificacion {
   type: typeof AGREGAR_CERTIFICACION;
   payload: Certificacion;
+  mensajesCertificaciones: string;
 }
 
 interface AccionEliminarCertificacion {
   type: typeof ELIMINAR_CERTIFICACION;
   payload: Certificacion;
+  mensajesCertificaciones: string;
 }
 
 export type TiposAccionesCertificacion =

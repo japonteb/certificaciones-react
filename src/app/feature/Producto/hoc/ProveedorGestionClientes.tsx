@@ -4,7 +4,10 @@ import { connect } from 'react-redux';
 import { listarClientesAsync } from 'app/core/redux/acciones/clientes/ClientesAcciones';
 
 const mapStateToProps = (state: EstadoGeneral) => {
-  return state.clientes;
+  return {
+    clientes: state.estadoClientes.clientes,
+    cantidadTotalCliente: state.estadoClientes.cantidadTotalCliente,
+  };
 };
 
 export const ProveedorGestionClientes = connect(mapStateToProps, {

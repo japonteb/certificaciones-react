@@ -12,22 +12,24 @@ import { useEffect } from 'react';
 interface GestionDetalleClienteProps {
   examenes: Array<ExamenPorCliente>;
   cliente: Cliente;
-  obtenerDetalleCliente: () => void;
-  listarExamenesPorCliente: (numeroPagina: number) => void;
+  clienteId: number;
+  obtenerDetalleCliente: (clienteId: number) => void;
+  listarExamenesPorCliente: (clienteId: number) => void;
   cantidadTotalExamenPorCliente: number;
 }
 
 export const GestionDetalleCliente: React.FC<GestionDetalleClienteProps> = ({
   examenes,
   cliente,
+  clienteId,
   obtenerDetalleCliente,
   listarExamenesPorCliente,
   cantidadTotalExamenPorCliente,
 }) => {
   useEffect(() => {
-    obtenerDetalleCliente();
-    listarExamenesPorCliente(2);
-  }, [obtenerDetalleCliente, listarExamenesPorCliente]);
+    obtenerDetalleCliente(clienteId);
+    listarExamenesPorCliente(clienteId);
+  }, [obtenerDetalleCliente, listarExamenesPorCliente, clienteId]);
   return (
     <DivContainer>
       <DivRow>
@@ -50,6 +52,7 @@ GestionDetalleCliente.propTypes = {
     nombre: PropTypes.string.isRequired,
     tipoCliente: PropTypes.number.isRequired,
   }).isRequired,
+  clienteId: PropTypes.number.isRequired,
   obtenerDetalleCliente: PropTypes.func.isRequired,
   listarExamenesPorCliente: PropTypes.func.isRequired,
   cantidadTotalExamenPorCliente: PropTypes.number.isRequired,

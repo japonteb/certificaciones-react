@@ -9,6 +9,8 @@ import { ExamenPorCliente } from 'app/feature/Producto/models/ExamenPorCliente';
 const initialState: EstadoExamen = {
   examenes: Array<ExamenPorCliente>(),
   cantidadTotalExamenPorCliente: 0,
+  mensajesExamenes: '',
+  hayError: false,
 };
 
 export default function (
@@ -19,6 +21,7 @@ export default function (
     case AGREGAR_EXAMEN: {
       return {
         ...state,
+        mensajesExamenes: action.mensajesExamenes,
       };
     }
 

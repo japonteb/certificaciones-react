@@ -1,12 +1,14 @@
 import * as React from 'react';
+import { RouteComponentProps, useParams } from 'react-router-dom';
 import { Layout } from 'app/shared/components/Layout';
 import { ProveedorGestionDetalleCliente } from '../hoc/ProveedorGestionDetalleCliente';
-import { RouteComponentProps } from 'react-router-dom';
 
 const DetalleClientePage: React.FC<RouteComponentProps> = () => {
+  const { id } = useParams();
+
   return (
     <Layout title="Detalle cliente" description="Gestión detalle cliente">
-      <ProveedorGestionDetalleCliente />
+      <ProveedorGestionDetalleCliente clienteId={id} />
     </Layout>
   );
 };

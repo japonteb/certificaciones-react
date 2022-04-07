@@ -10,10 +10,12 @@ describe('Reductor examenes', () => {
     const estadoInicial: EstadoExamen = {
       cantidadTotalExamenPorCliente: 2,
       examenes: [],
+      mensajesExamenes: '',
+      hayError: false,
     };
     const nuevoExamen: RegistrarExamen = {
-      cliente: { id: 1, nombre: 'William', tipoCliente: 4 },
-      certificacion: {
+      comandoCliente: { id: 1, nombre: 'William', tipoCliente: 4 },
+      comandoCertificacion: {
         id: 1,
         nombre: 'Java',
         detalle: 'Java EE y Servicios Web',
@@ -29,7 +31,7 @@ describe('Reductor examenes', () => {
     // Act
     const nuevoEstado = reductorExamenes(
       estadoInicial,
-      agregarNuevoExamen(nuevoExamen)
+      agregarNuevoExamen(nuevoExamen, 'Examen agregado en pruebas')
     );
     // Assert
     expect(nuevoEstado).toStrictEqual(estadoEsperado);
