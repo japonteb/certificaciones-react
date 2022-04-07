@@ -53,11 +53,6 @@ export const FormCrearExamen: React.FC<FormCrearExamenProp> = ({
     values: FormValues,
     { resetForm }: FormikHelpers<FormValues>
   ) => {
-    console.log('El id del cliente es:');
-    console.log(values.clienteId);
-    console.log('El id de la certificación es:');
-    console.log(values.certificacionId);
-
     const cliente = clientes.find(
       (cli) => cli.id === Number(values.clienteId)
     ) || {

@@ -1,5 +1,6 @@
 import {
   AGREGAR_CERTIFICACION,
+  AGREGAR_MENSAJE_ERROR_CERTIFICACION,
   ELIMINAR_CERTIFICACION,
   LISTAR_CERTIFICACIONES,
   TiposAccionesCertificacion,
@@ -11,6 +12,7 @@ const initialState: EstadoCertificacion = {
   certificaciones: Array<Certificacion>(),
   cantidadTotalCertificacion: 0,
   mensajesCertificaciones: '',
+  hayError: false,
 };
 
 export default function (
@@ -33,6 +35,14 @@ export default function (
         ...state,
         certificaciones: [...state.certificaciones, certificacion],
         mensajesCertificaciones: action.mensajesCertificaciones,
+      };
+    }
+
+    case AGREGAR_MENSAJE_ERROR_CERTIFICACION: {
+      return {
+        ...state,
+        mensajesCertificaciones: action.mensajesCertificaciones,
+        hayError: action.hayError,
       };
     }
 

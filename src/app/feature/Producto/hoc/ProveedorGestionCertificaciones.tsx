@@ -14,6 +14,7 @@ const mapStateToProps = (state: EstadoGeneral) => {
       state.estadoCertificaciones.mensajesCertificaciones,
     cantidadTotalCertificacion:
       state.estadoCertificaciones.cantidadTotalCertificacion,
+    hayError: state.estadoCertificaciones.hayError,
   };
 };
 

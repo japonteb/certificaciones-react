@@ -15,7 +15,7 @@ interface GestionExamenesProps {
   hayError: boolean;
   listarClientes: (numeroPagina: number) => void;
   listarCertificaciones: (numeroPagina: number) => void;
-  agregarNuevoExamen: (examenes: RegistrarExamen) => void;
+  agregarNuevoExamen: (examen: RegistrarExamen) => void;
 }
 
 export const GestionExamenes: React.FC<GestionExamenesProps> = ({

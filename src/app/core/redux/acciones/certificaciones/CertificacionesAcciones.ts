@@ -1,5 +1,6 @@
 import {
   AGREGAR_CERTIFICACION,
+  AGREGAR_MENSAJE_ERROR_CERTIFICACION,
   ELIMINAR_CERTIFICACION,
   LISTAR_CERTIFICACIONES,
   TiposAccionesCertificacion,
@@ -15,6 +16,16 @@ export function agregarNuevaCertificacion(
     type: AGREGAR_CERTIFICACION,
     payload: certificacion,
     mensajesCertificaciones,
+  };
+}
+
+export function agregarMensajeErrorCertificacion(
+  mensajesCertificaciones: string
+): TiposAccionesCertificacion {
+  return {
+    type: AGREGAR_MENSAJE_ERROR_CERTIFICACION,
+    mensajesCertificaciones,
+    hayError: true,
   };
 }
 
@@ -52,7 +63,7 @@ export function agregarNuevaCertificacionAsync(certificacion: Certificacion) {
         );
       })
       .catch((error: any) => {
-        console.log(error.response.data.message);
+        dispacth(agregarMensajeErrorCertificacion(error.response.data.message));
       });
   };
 }
@@ -69,7 +80,7 @@ export function eliminarCertificacionAsync(certificacion: Certificacion) {
         )
       )
       .catch((error: any) => {
-        console.log(error.response.data.message);
+        dispacth(agregarMensajeErrorCertificacion(error.response.data.message));
       });
   };
 }

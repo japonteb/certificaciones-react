@@ -1,5 +1,6 @@
 import {
   AGREGAR_EXAMEN,
+  AGREGAR_MENSAJE_ERROR_EXAMEN,
   LISTAR_EXAMENES_POR_CLIENTE,
   TiposAccionesExamen,
 } from '../../acciones/examenes/ExamenesTiposAcciones';
@@ -22,6 +23,14 @@ export default function (
       return {
         ...state,
         mensajesExamenes: action.mensajesExamenes,
+      };
+    }
+
+    case AGREGAR_MENSAJE_ERROR_EXAMEN: {
+      return {
+        ...state,
+        mensajesExamenes: action.mensajesExamenes,
+        hayError: action.hayError,
       };
     }
 

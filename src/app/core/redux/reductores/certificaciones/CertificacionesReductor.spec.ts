@@ -11,6 +11,7 @@ describe('Reductor certificaciones', () => {
       cantidadTotalCertificacion: 2,
       certificaciones: [],
       mensajesCertificaciones: '',
+      hayError: false,
     };
     const nuevaCertificacion: Certificacion = {
       id: -1,

@@ -4,4 +4,5 @@ export interface EstadoCertificacion {
   certificaciones: Certificacion[];
   cantidadTotalCertificacion: number;
   mensajesCertificaciones: string;
+  hayError: boolean;
 }

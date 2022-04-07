@@ -12,7 +12,6 @@ export function agregarNuevoExamen(
   examen: RegistrarExamen,
   mensajesExamenes: string
 ): TiposAccionesExamen {
-  console.log(mensajesExamenes);
   return {
     type: AGREGAR_EXAMEN,
     payload: examen,
@@ -33,13 +32,13 @@ export function agregarMensajeErrorExamen(
 export function agregarNuevoExamenAsync(examen: RegistrarExamen) {
   return function (dispacth: any) {
     ExamenRepositorio.agregarExamen(examen)
-      .then((respuesta: any) =>
+      .then((respuesta: any) => {
         dispacth(
           agregarNuevoExamen(examen, 'El examen fue programado con éxito')
-        )
-      )
+        );
+      })
       .catch((error: any) => {
-        agregarMensajeErrorExamen(error.response.data.message);
+        dispacth(agregarMensajeErrorExamen(error.response.data.message));
       });
   };
 }
