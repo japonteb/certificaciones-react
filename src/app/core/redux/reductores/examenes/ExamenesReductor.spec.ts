@@ -27,6 +27,7 @@ describe('Reductor examenes', () => {
     const estadoEsperado: EstadoExamen = {
       ...estadoInicial,
       examenes: [],
+      mensajesExamenes: 'Examen agregado en pruebas',
     };
     // Act
     const nuevoEstado = reductorExamenes(

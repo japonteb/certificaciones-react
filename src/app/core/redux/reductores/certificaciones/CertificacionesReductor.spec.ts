@@ -23,6 +23,7 @@ describe('Reductor certificaciones', () => {
     const estadoEsperado: EstadoCertificacion = {
       ...estadoInicial,
       certificaciones: [nuevaCertificacion],
+      mensajesCertificaciones: 'Certificación agregada en pruebas',
     };
 
     // Act
