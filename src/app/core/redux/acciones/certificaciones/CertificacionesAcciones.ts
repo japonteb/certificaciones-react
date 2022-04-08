@@ -66,7 +66,7 @@ export function agregarNuevaCertificacionAsync(certificacion: Certificacion) {
       .then((respuesta: any) => {
         dispacth(
           agregarNuevaCertificacion(
-            certificacion,
+            respuesta.data,
             'La certificación fue almacenada con éxito'
           )
         );
