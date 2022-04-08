@@ -25,8 +25,8 @@ export function agregarMensajeErrorCertificacion(
 ): TiposAccionesCertificacion {
   return {
     type: AGREGAR_MENSAJE_ERROR_CERTIFICACION,
-    mensajesCertificaciones,
     hayError: true,
+    mensajesCertificaciones,
   };
 }
 
@@ -95,9 +95,12 @@ export function eliminarCertificacionAsync(certificacion: Certificacion) {
 }
 
 export function listarCertificacionesAsync() {
+  const CANTIDAD_REGISTROS_POR_DEFECTO = 6;
   return function (dispacth: any) {
     CertificacionRepositorio.consultarPorPagina().then((respuesta: any) =>
-      dispacth(listarCertificaciones(respuesta.data, 6))
+      dispacth(
+        listarCertificaciones(respuesta.data, CANTIDAD_REGISTROS_POR_DEFECTO)
+      )
     );
   };
 }

@@ -27,14 +27,7 @@ export default function (
       };
     }
 
-    case AGREGAR_MENSAJE_ERROR_EXAMEN: {
-      return {
-        ...state,
-        mensajesExamenes: action.mensajesExamenes,
-        hayError: action.hayError,
-      };
-    }
-
+    case AGREGAR_MENSAJE_ERROR_EXAMEN:
     case LIMPIAR_MENSAJES_EXAMEN: {
       return {
         ...state,

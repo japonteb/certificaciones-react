@@ -18,9 +18,10 @@ export function listarClientes(
 }
 
 export function listarClientesAsync() {
+  const CANTIDAD_REGISTROS_POR_DEFECTO = 6;
   return function (dispacth: any) {
     ClienteRepositorio.consultarPorPagina().then((respuesta: any) =>
-      dispacth(listarClientes(respuesta.data, 6))
+      dispacth(listarClientes(respuesta.data, CANTIDAD_REGISTROS_POR_DEFECTO))
     );
   };
 }

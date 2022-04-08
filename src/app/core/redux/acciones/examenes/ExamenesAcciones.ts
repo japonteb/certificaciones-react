@@ -25,8 +25,8 @@ export function agregarMensajeErrorExamen(
 ): TiposAccionesExamen {
   return {
     type: AGREGAR_MENSAJE_ERROR_EXAMEN,
-    mensajesExamenes,
     hayError: true,
+    mensajesExamenes,
   };
 }
 
@@ -64,9 +64,16 @@ export function listarExamenesPorCliente(
 }
 
 export function listarExamenesPorClienteAsync(clienteId: number) {
+  const CANTIDAD_REGISTROS_POR_DEFECTO = 6;
   return function (dispacth: any) {
     ExamenRepositorio.consultarExamenesPorClientePorId(clienteId).then(
-      (respuesta: any) => dispacth(listarExamenesPorCliente(respuesta.data, 6))
+      (respuesta: any) =>
+        dispacth(
+          listarExamenesPorCliente(
+            respuesta.data,
+            CANTIDAD_REGISTROS_POR_DEFECTO
+          )
+        )
     );
   };
 }

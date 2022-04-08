@@ -39,14 +39,7 @@ export default function (
       };
     }
 
-    case AGREGAR_MENSAJE_ERROR_CERTIFICACION: {
-      return {
-        ...state,
-        mensajesCertificaciones: action.mensajesCertificaciones,
-        hayError: action.hayError,
-      };
-    }
-
+    case AGREGAR_MENSAJE_ERROR_CERTIFICACION:
     case LIMPIAR_MENSAJES_CERTIFICACION: {
       return {
         ...state,
